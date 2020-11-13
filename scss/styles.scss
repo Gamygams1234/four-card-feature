@@ -1,0 +1,130 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    margin: 0 10% 0 10%;
+}
+.heavy-font {
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+}
+.light-font {
+    font-weight: 200;
+    color: hsl(234, 12%, 34%);
+}
+.med-font {
+    font-weight: 400;
+    color: hsl(234, 12%, 34%);
+}
+
+.red-box {
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+.cyan-box {
+    border-top: 5px solid hsl(180, 62%, 55%);
+}
+.orange-box {
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+.blue-box {
+    border-top: 5px solid hsl(212, 86%, 64%);
+}
+.content {
+    background-color: hsl(0, 0, 98);
+    min-height: 100vh;
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        padding-top: 2em;
+        h1 {
+            padding-top: 0.5em;
+        }
+        p {
+            max-width: 550px;
+            padding-top: 1.5em;
+        }
+    }
+
+    .grid {
+        padding-top: 4em;
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 350px;
+
+            .box {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                margin: 20px;
+                min-width: 0;
+                max-width: 350px;
+                padding: 1.5em;
+                height: 250px;
+                -webkit-box-shadow: 0px 12px 11px 0px rgba(105, 121, 145, 0.66);
+                box-shadow: 0px 12px 11px 0px rgba(105, 121, 145, 0.66);
+                border-radius: 0.5em;
+                .image-box {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 675px) and (max-width: 950px) {
+    .content {
+        .grid {
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: auto;
+            justify-content: center;
+            .column {
+                flex-direction: row;
+                flex-basis: auto;
+                .box {
+                    min-width: 0px;
+                    width: 275px;
+                }
+            }
+            .mid-col {
+                order: 3;
+                flex-direction: row;
+                flex-basis: auto;
+                justify-content: space-between;
+            }
+            .last-col {
+                order: 2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 674px) {
+    .header {
+        margin: 0 auto;
+        max-width: 400px;
+        h1 {
+            font-size: 2em;
+        }
+    }
+    .content {
+        .grid {
+            flex-direction: column;
+            .column {
+                flex-basis: auto;
+            }
+        }
+    }
+}
